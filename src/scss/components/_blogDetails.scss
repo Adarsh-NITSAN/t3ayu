@@ -1,0 +1,221 @@
+.blog-detail-meta {
+  padding: 40px;
+  border: 3px solid #ededed;
+  margin-bottom: 40px;
+  .blog-meta-title {
+    @include font-size($font-sizes20);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    padding-left: 30px;
+    position: relative;
+    &::before {
+      content: "";
+      @include abs-position(0, initial, initial, 0);
+      height: 100%;
+      width: 2px;
+      background-color: $primary-color;
+    }
+  }
+
+  &.blog-social-sharing {
+    ul li {
+      display: inline-block;
+      margin: 0px 10px 10px 0px;
+
+      button svg {
+        &:hover {
+          rect {
+            fill: $primary-color;
+            transition: all 0.3s ease-out 0s;
+          }
+        }
+      }
+    }
+  }
+
+  &.blog-author-detail .blog-author {
+    @include font-size($font-sizes14);
+    text-align: center;
+    h6 {
+      @include font-size($font-sizes18);
+      text-transform: uppercase;
+      margin-top: 30px;
+      padding-bottom: 20px;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &.blog-related-categories {
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      @include font-size($font-sizes14);
+      color: $text-color;
+      padding-left: 30px;
+      height: 50px;
+      line-height: 50px !important;
+      display: block;
+      background-color: #edf3ff;
+      position: relative;
+      transition: all 0.3s ease-out 0s;
+
+      span {
+        @include abs-position(0, 0, initial, initial);
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        background-color: #d8e5ff;
+        text-align: center;
+        transition: all 0.3s ease-out 0s;
+      }
+
+      &:hover {
+        background-color: $primary-color;
+
+        span {
+          background-color: color-mix(
+            in srgb,
+            var(--primary-color) 100%,
+            $white 50%
+          );
+        }
+      }
+    }
+  }
+
+  &.blog-related-tags {
+    ul li {
+      display: inline-block;
+      margin: 0px 10px 15px 0px;
+    }
+
+    a {
+      @include font-size($font-sizes12);
+      color: $text-color;
+      padding: 10px 20px;
+      background-color: #f4f4f4;
+
+      &:hover {
+        background-color: $primary-color;
+        transition: all 0.3s ease-out 0s;
+      }
+    }
+  }
+}
+
+.related-post-area {
+  padding-top: 50px;
+  border-top: 3px solid #ededed;
+
+  h3 {
+    @include font-size($font-sizes28);
+    margin-bottom: 30px;
+  }
+
+  .related-post-item {
+    margin-bottom: 50px;
+  }
+
+  .post-thumb {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+  }
+
+  .post-desc {
+    @include font-size($font-sizes16);
+    line-height: 20px !important;
+    color: $secondary-color;
+    padding: 30px;
+    box-shadow: 0px 8px 16px 0px rgba(93, 93, 93, 0.06);
+
+    a {
+      font-weight: $bold-weight;
+      margin-bottom: 10px;
+      display: inline-flex;
+      color: $text-color;
+      transition: all 0.3s ease-out 0s;
+
+      svg {
+        color: $text-color;
+        margin-right: 5px;
+      }
+
+      &:hover {
+        color: $primary-color;
+
+        svg {
+          color: $primary-color;
+        }
+      }
+    }
+
+    h4 {
+      @include font-size($font-sizes24);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.blog-details-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 650px;
+  width: 100%;
+  margin-bottom: 100px;
+
+  .blog-details-info {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    border-top: 6px solid $primary-color;
+    padding: 50px 55px;
+    background-color: $secondary-color;
+    color: $white;
+
+    ul {
+      li {
+        span {
+          text-transform: uppercase;
+          font-weight: $bold-weight;
+          @include font-size($font-sizes24);
+        }
+
+        p {
+          color: $light-color;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .related-post-area .post-desc {
+    padding: 40px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .blog-detail-meta {
+    padding: 40px 20px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .blog-detail-meta {
+    padding: 40px;
+  }
+}

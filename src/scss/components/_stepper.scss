@@ -1,0 +1,92 @@
+.stepper-section {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  background-color: $white;
+  box-shadow: 0px 10px 20px 0px rgba($black, 3%);
+}
+
+// Stepper default Layout
+.stepper {
+  text-align: center;
+  padding: 50px 30px;
+  position: relative;
+  z-index: 1;
+  color: $text-color;
+
+  .stepper__icon {
+    background-color: $primary-color;
+    width: 70px;
+    height: 70px;
+    line-height: 75px;
+    display: inline-block;
+    font-size: 24px;
+    margin-bottom: 40px;
+    transition: all ease-in-out 0.3s;
+
+    svg {
+      transition: all ease-in-out 0.3s;
+    }
+  }
+
+  h4 {
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+
+  &:hover {
+    .stepper__icon {
+      background-color: $secondary-color;
+
+      svg {
+        color: $white;
+      }
+    }
+  }
+}
+
+.stepper__count {
+  @include position(absolute, bottom, 27px, right, 6px);
+  font-size: 80px;
+  z-index: -1;
+  color: $border-color;
+  opacity: 0.5;
+  font-weight: $bold-weight;
+  font-family: var(--font-primary);
+}
+
+// Stepper Grid Layout
+.stepper-grid {
+  padding: 30px 35px;
+  background-color: $white;
+  position: relative;
+  z-index: 1;
+  color: $text-color;
+  box-shadow: 0px 10px 20px 0px rgba($black, 1%);
+
+  h4 {
+    max-width: 80%;
+  }
+
+  .stepper-grid__icon {
+    @include position(absolute, top, 30px, right, 35px);
+    background-color: $primary-color;
+    width: 30px;
+    height: 30px;
+    line-height: 35px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 100;
+  }
+
+  .stepper-grid__count {
+    @include position(absolute, left, 0, bottom, 0);
+    font-size: 80px;
+    line-height: 1;
+    color: $border-color;
+    z-index: -1;
+    opacity: 0.5;
+    font-weight: $bold-weight;
+    font-family: var(--font-primary);
+  }
+}

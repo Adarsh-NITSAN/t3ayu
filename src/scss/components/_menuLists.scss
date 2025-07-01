@@ -1,0 +1,40 @@
+.menu_pages,
+.menu_sub_pages {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: $bold-weight;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	}
+	ul li {
+		line-height: 38px;
+		a {
+			@include font-size($font-sizes18);
+			color: $secondary-color;
+			transition: all 0.3s ease-out 0s;
+			&:hover {
+				color: $primary-color;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.menu_pages,
+	.menu_sub_pages {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: $bold-weight;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+	}
+}

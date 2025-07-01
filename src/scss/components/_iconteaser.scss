@@ -1,0 +1,101 @@
+.icon-teaser {
+  display: block;
+  padding: 60px 30px;
+  text-align: center;
+  position: relative;
+  margin: 0 15px;
+  color: $text-color;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.03);
+
+  &.bg-dark-color {
+    .icon-teaser__icon {
+      color: $primary-color;
+    }
+
+    .icon-teaser__link {
+      color: $primary-color;
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    h4,
+    p {
+      color: $white;
+    }
+  }
+
+  &.bg-primary-color {
+    .icon-teaser__link {
+      color: $text-color;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  h4 {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+  }
+
+  .icon-teaser__link {
+    color: $secondary-color;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &:hover {
+    .icon-teaser__icon,
+    .icon-teaser__image {
+      animation: hover-shake 0.5s ease-in-out;
+    }
+  }
+}
+
+.icon-doted-path {
+  &::before {
+    content: "";
+    background-color: $primary-color;
+    width: 50px;
+    height: 50px;
+    @include position(absolute, top, 25px, left, -25px);
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    background-color: $primary-color;
+    width: 50px;
+    height: 50px;
+    @include position(absolute, bottom, 25px, right, -25px);
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+
+.icon-teaser__icon {
+  margin-bottom: 20px;
+  color: $secondary-color;
+
+  svg {
+    font-size: 50px;
+  }
+}
+
+.icon-teaser__image {
+  margin-bottom: 20px;
+  img {
+    max-width: 100%;
+  }
+}
+
+.icon-teaser__link {
+  font-weight: $bold-weight;
+  transition: all ease-in-out 0.3s;
+}

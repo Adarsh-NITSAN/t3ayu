@@ -1,0 +1,81 @@
+.pagination {
+  @include flexbox();
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+
+  li {
+    border: 1px solid rgba($black, 0.1);
+  }
+
+  .page-item {
+    line-height: normal;
+    text-align: center;
+    background-color: $white;
+    border: 1px solid rgba($black, 0.2);
+
+    a {
+      @include flexbox();
+      align-items: center;
+      background-color: $white;
+      color: $primary-color;
+      font-size: 14px;
+      height: 36px;
+      justify-content: center;
+      padding: 4px;
+      width: 36px;
+
+      &:hover,
+      &.active {
+        background-color: $primary-color;
+        color: $white;
+        svg {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .page-nav {
+    a {
+      font-size: 13px;
+      letter-spacing: -1px;
+
+      &.disabled {
+        color: $secondary-color;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      &:hover,
+      &.active {
+        background-color: inherit;
+        color: $white;
+      }
+    }
+  }
+}
+
+.pagination {
+  gap: 10px;
+}
+
+.pagination li.active a {
+  background-color: $primary-color;
+  color: $white;
+}
+
+.pagination .page-item::after,
+.pagination .page-nav::after {
+  display: none;
+}
+
+.pagination .page-item,
+.pagination .page-nav {
+  padding: 0;
+
+  strong {
+    font-weight: $regular-weight;
+  }
+}

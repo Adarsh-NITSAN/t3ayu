@@ -1,0 +1,188 @@
+.landing-banner {
+  position: relative;
+  .landing-slider {
+    min-height: 100vh;
+    height: 100%;
+  }
+  .single-slide {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    padding-top: 240px;
+    padding-bottom: 200px;
+    min-height: 100vh;
+    height: 100%;
+    z-index: 1;
+
+    &.with-overlay {
+      color: $white;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      span,
+      p {
+        position: relative;
+        z-index: 1;
+        color: $white;
+      }
+      &::before {
+        content: "";
+        @include abs-position(0, initial, initial, 0);
+        background-color: $image-overlay;
+        opacity: 0.5;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+    }
+  }
+  .slider-content {
+    width: 100%;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: $thin-weight;
+    }
+    strong {
+      font-weight: $bold-weight;
+    }
+  }
+  &.with-pattern {
+    .banner-shape-curve {
+      @include abs-position(0, initial, initial, 0);
+      z-index: 2;
+      pointer-events: none;
+      width: 90%;
+    }
+    .banner-shape-one,
+    .banner-shape-two {
+      @include abs-position(initial, 0, 0, initial);
+      opacity: 0.6;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .banner-shape-one {
+      background-color: $primary-color;
+      height: 320px;
+      width: 320px;
+      clip-path: polygon(100% 0%, 100% 62%, 62% 100%, 0% 100%);
+    }
+    .banner-shape-two {
+      background-color: $secondary-color;
+      height: 82px;
+      width: 82px;
+      clip-path: polygon(100% 0%, 0 100%, 100% 100%);
+    }
+  }
+  &.with-curve {
+    .banner-shape-three {
+      @include abs-position(initial, 0, -1px, 0);
+      width: 100%;
+      z-index: 1;
+      background-color: transparent;
+      height: 225px;
+      overflow: hidden;
+      pointer-events: none;
+      svg {
+        height: 225px;
+        width: calc(125% + 1.3px);
+        fill: $white;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .swiper-thumb-lists {
+    padding-top: 10px;
+    .thumbs-img {
+      width: 100%;
+      opacity: 0.2;
+    }
+    .swiper-slide-thumb-active .thumbs-img {
+      opacity: 1;
+    }
+    video,
+    iframe {
+      height: 135px;
+    }
+  }
+  iframe,
+  video {
+    height: 100vh;
+    pointer-events: none;
+    ~ div {
+      @include abs-position(50%, initial, initial, 50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+  iframe {
+    width: 100%;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .landing-banner {
+    .single-slide {
+      padding-top: 250px;
+      padding-bottom: 200px;
+    }
+
+    &.with-pattern {
+      .banner-shape-curve {
+        width: 45%;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .landing-banner {
+    .slider-content {
+      width: 60%;
+    }
+    &.with-pattern {
+      .banner-shape-curve {
+        width: 50%;
+      }
+      .banner-shape-two {
+        width: 13%;
+        height: 16%;
+        height: 120px;
+        width: 120px;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .landing-banner {
+    .single-slide {
+      padding-top: 350px;
+      padding-bottom: 350px;
+    }
+    &.with-pattern {
+      .banner-shape-curve {
+        width: 30%;
+      }
+      .banner-shape-one {
+        height: 625px;
+        width: 600px;
+        clip-path: polygon(100% 0%, 100% 59%, 60% 100%, 0% 100%);
+      }
+      .banner-shape-two {
+        width: 26%;
+        height: 34%;
+        width: 240px;
+        height: 260px;
+      }
+    }
+  }
+}

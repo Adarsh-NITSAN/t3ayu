@@ -1,0 +1,69 @@
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+@import "/node_modules/swiper/modules/navigation.scss";
+@import "/node_modules/swiper/modules/pagination.scss";
+@import "/node_modules/swiper/modules/scrollbar.scss";
+@import "/node_modules/swiper/modules/effect-fade.scss";
+@import "/node_modules/swiper/modules/effect-cube.scss";
+@import "/node_modules/swiper/modules/effect-creative.scss";
+@import "/node_modules/swiper/modules/effect-cards.scss";
+@import "/node_modules/swiper/modules/effect-flip.scss";
+
+@import "/node_modules/swiper/swiper.scss";
+// All Mixin
+@import "./mixins/mixins";
+
+// Base Style
+@import "./base/base";
+@import "./base/font-size";
+@import "./base/variables";
+@import "./base/typography";
+
+// layouts
+@import "./layouts/boxed";
+@import "./layouts/dark";
+
+// include
+@import "./include/spacing";
+@import "./include/cms";
+@import "./include/general";
+@import "./include/themeBackground";
+@import "./include/styleSwitcher";
+
+// Components
+@import "./components/pageheader";
+@import "./components/breadcrumb";
+@import "./components/button";
+@import "./components/header";
+@import "./components/footer";
+@import "./components/gototop";
+@import "./components/team";
+@import "./components/services";
+@import "./components/blog";
+@import "./components/testimonials";
+@import "./components/clients";
+@import "./components/blockquote";
+@import "./components/slider";
+@import "./components/accordian";
+@import "./components/counter";
+@import "./components/progressbar";
+@import "./components/callToAction";
+@import "./components/stepper";
+@import "./components/columnTeaser";
+@import "./components/iconteaser";
+@import "./components/blogfilter";
+@import "./components/blogisotop";
+@import "./components/blogMasonryWithDetails";
+@import "./components/blogGridWithDetails";
+@import "./components/landingBanner";
+@import "./components/contactForm";
+@import "./components/blogmasonry";
+@import "./components/blogstandard";
+@import "./components/contactInformation";
+@import "./components/pagination";
+@import "./components/video";
+@import "./components/textwithmedia";
+@import "./components/blogDetails";
+@import "./components/menuLists";
+@import "./components/imageTeaser";
+@import "./components/blogHorizontalWithDetails";
+@import "./components/search";

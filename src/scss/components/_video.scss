@@ -1,0 +1,131 @@
+.video-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .video__text {
+    color: $black;
+    font-weight: $bold-weight;
+
+    .video__text-link {
+      margin-bottom: 40px;
+
+      .mediaplayer__playbtn {
+        position: relative;
+        height: 140px;
+        width: 140px;
+        line-height: 140px;
+        border-radius: 50%;
+        background-color: $primary-color;
+        font-size: 20px;
+        text-align: center;
+        color: $secondary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+
+        &:after {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          content: "";
+          background-color: transparent;
+          border-radius: 50%;
+          border: 4px solid $white;
+          animation: pulse-animation-outer 1s linear infinite;
+        }
+
+        &:hover {
+          color: $white;
+          svg {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &.video-overlay {
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      content: "";
+      background-color: $image-overlay;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .video__text {
+      color: $white;
+    }
+  }
+}
+
+.video-modal {
+  .modal-header {
+    border: 0;
+    align-items: flex-start;
+  }
+
+  .modal-dialog {
+    max-width: 1000px;
+  }
+
+  .modal-content {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .btn-close {
+    border-radius: 100%;
+    background-color: $secondary-color;
+    background-image: url("data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20stroke%3D%22%23FFF%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22M16%208l-8%208m0-8l8%208%22%2F%3E%3C%2Fsvg%3E");
+    background-size: 25px;
+    opacity: 1;
+
+    &:hover {
+      background-color: $primary-color;
+      background-image: url("data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20stroke%3D%22%23FFF%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22M16%208l-8%208m0-8l8%208%22%2F%3E%3C%2Fsvg%3E");
+    }
+  }
+}
+
+.video-screen {
+  height: 400px;
+  position: relative;
+  transition: all 2s ease-out;
+  border: 5px solid rgba($white, 0.75);
+
+  &.loaded {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .spinner-wrapper {
+    @include abs-position(0, 0, 0, 0);
+    @include flexbox();
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+  }
+}
+
+.modal-backdrop {
+  &.show {
+    opacity: 0.7;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .video-screen {
+    height: 650px;
+  }
+}

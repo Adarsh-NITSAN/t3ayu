@@ -1,0 +1,32 @@
+.breadcrumbs {
+  @include font-size($font-sizes14);
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 40%);
+  text-align: center;
+  background: $primary-color;
+  padding: 20px 25px;
+  font-family: var(--font-oswald);
+  font-weight: $bold-weight;
+  bottom: 0;
+  z-index: 9;
+
+  .breadcrumbs__Link {
+    &:hover {
+      color: $white;
+    }
+  }
+
+  span {
+    text-transform: uppercase;
+    font-weight: $bold-weight;
+    font-family: var(--font-primary);
+  }
+
+  a {
+    color: $black;
+  }
+  .breadcrumbs-separator {
+    margin: 0 3px;
+  }
+}

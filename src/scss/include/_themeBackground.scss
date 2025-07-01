@@ -1,0 +1,160 @@
+/*******************************************************************************
+* background color 
+*******************************************************************************/
+.bg-dark-color {
+	background-color: $secondary-color;
+}
+
+.bg-primary-color {
+	background-color: $primary-color;
+}
+
+.bg-light-color {
+	background-color: $white;
+}
+
+.section--bg-white-color {
+	background-color: transparent;
+	position: relative;
+	z-index: 0;
+}
+
+.section--bg-primary-color {
+	background: color-mix(in srgb, var(--primary-color) 100%, $white 1%);
+}
+
+.section--bg-light-color {
+	background-color: $light-color;
+	position: relative;
+	z-index: 0;
+	.menu_pages {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		a {
+			color: $text-color;
+		}
+	}
+}
+
+.section--bg-dark-color {
+	background: $secondary-color;
+	position: relative;
+	z-index: 0;
+
+	.ce-text,
+	.ce-bodytext {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		span {
+			color: $white;
+		}
+		.overline-line--left {
+			color: $primary-color;
+		}
+	}
+
+	.headings {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		span {
+			color: $white;
+		}
+	}
+	// service card
+	.service-card {
+		background-color: $secondary-color;
+
+		h4,
+		p {
+			color: $white;
+		}
+	}
+
+	//horizontal-blog
+	.horizontal-blog__post {
+		border-color: rgba($white, 10%);
+
+		.post__content {
+			a {
+				color: $white;
+				transition: all ease-in-out 0.3s;
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+
+		.post__content {
+			.content__date {
+				span {
+					color: $white;
+				}
+			}
+		}
+	}
+
+	//footer
+	footer,
+	.footer-section {
+		.copy-right-section {
+			background-color: $secondary-color;
+
+			.copy-right-text {
+				border-color: rgba($white, 10%);
+				color: $white;
+
+				p {
+					color: $white;
+				}
+			}
+		}
+
+		.menu_pages {
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6,
+			p,
+			a {
+				color: $white;
+			}
+		}
+	}
+
+	.menu_pages {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p,
+		a {
+			color: $white;
+		}
+	}
+	.counter-section {
+		.counter-inner {
+			&::after {
+				background-color: $white;
+			}
+		}
+	}
+}

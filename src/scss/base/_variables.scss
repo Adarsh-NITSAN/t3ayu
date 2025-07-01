@@ -1,0 +1,38 @@
+//****************************************************************************
+//  Root variables overrides
+//***************************************************************************/
+:root {
+  --primary-color: #ffaa17;
+  --secondary-color: #041d38;
+  --text-color: #041d38;
+  --light-color: #f7fcff;
+  --website-size: 100%;
+  --font-primary: var(--font-oswald);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Ayu Color
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$text-color: var(--text-color);
+$light-color: var(--light-color);
+$border-color: #041d381a;
+$border-muted-color: #e1f3ff;
+$image-overlay: #757a89;
+
+//****************************************************************************
+//  Font Weight
+//***************************************************************************/
+$thin-weight: 100;
+$extralight-weight: 200;
+$light-weight: 300;
+$regular-weight: 400;
+$medium-weight: 500;
+$semibold-weight: 600;
+$bold-weight: 700;
+$extrabold-weight: 800;
+$black-weight: 900;

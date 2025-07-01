@@ -1,0 +1,35 @@
+body {
+  &.boxed {
+    background-repeat: repeat;
+    background-position: 0 0;
+
+    .container {
+      max-width: 1140px;
+    }
+    // header {
+    //   position: relative;
+    //   .header {
+    //     margin: 0 auto;
+    //     max-width: 1300px;
+    //     height: auto;
+    //     &.header-absolute {
+    //       transform: translate(-50%, 0);
+    //       left: 50%;
+    //     }
+    //   }
+    // }
+    .wrapper,
+    .footer-section {
+      // background-color: $white;
+      margin: 0 auto;
+      max-width: 1300px;
+      height: auto;
+    }
+
+    .header {
+      & .header--three {
+        background-color: transparent;
+      }
+    }
+  }
+}

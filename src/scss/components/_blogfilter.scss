@@ -1,0 +1,40 @@
+.blog-filter {
+  background-color: $secondary-color;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+
+  ul {
+    li {
+      display: inline-block;
+      color: $white;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: var(--font-oswald);
+      padding: 10px;
+      margin: 0 15px;
+      text-transform: uppercase;
+      transition: all 0.3s ease-out 0s;
+      &.active {
+        color: $primary-color;
+      }
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &:after {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    right: 15px;
+    bottom: -15px;
+    background-color: $primary-color;
+    content: "";
+    z-index: -1;
+  }
+}
+

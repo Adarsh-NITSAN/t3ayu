@@ -1,0 +1,47 @@
+.image-teaser {
+	.image-teaser-wrapper {
+		position: relative;
+	}
+	.teaser-item {
+		width: 100%;
+		height: 250px;
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		margin-bottom: 30px;
+	}
+	h6 {
+		@include abs-position(initial, 30px, -30px, 30px);
+		background-color: $primary-color;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 20px 0;
+
+		a {
+			color: $text-color;
+			transition: all 0.3s ease-out 0s;
+			position: relative;
+			&::before {
+				@include abs-position(50%, -10px, initial, initial);
+				transform: translateY(-50%);
+				content: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M80%20240c-8.8%200-16%207.2-16%2016s7.2%2016%2016%2016h319.7L277%20388.4c-6.4%206.1-6.6%2016.2-.6%2022.6%203.1%203.3%207.4%205%2011.6%205%204%200%207.9-1.5%2011-4.4l139.3-132.7c6.3-6.3%209.7-14.4%209.7-22.9%200-8.6-3.3-16.6-9.4-22.6L299%20100.4c-6.4-6.1-16.5-5.8-22.6.6-6.1%206.4-5.8%2016.5.6%2022.6L399.2%20240H80z%22%2F%3E%3C%2Fsvg%3E");
+				width: 20px;
+				line-height: 0;
+				transition: all 0.3s ease-out 0s;
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		&:hover {
+			a {
+				padding-right: 25px;
+				&::before {
+					right: 0;
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

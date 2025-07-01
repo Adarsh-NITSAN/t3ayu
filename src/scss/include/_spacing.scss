@@ -1,0 +1,54 @@
+/*******************************************************************************
+* Frame Before & After Spacing 
+*******************************************************************************/
+@include beforespacing(
+  $tiny: 0,
+  $extra-small: 20,
+  $small: 25,
+  $medium: 30,
+  $large: 60,
+  $extra-large: 80
+);
+
+@include afterspacing(
+  $tiny: 0,
+  $extra-small: 20,
+  $small: 25,
+  $medium: 30,
+  $large: 60,
+  $extra-large: 80
+);
+
+@include media-breakpoint-up(lg) {
+  @include beforespacing(
+    $small: 30,
+    $medium: 40,
+    $large: 70,
+    $extra-large: 100
+  );
+  @include afterspacing($small: 30, $medium: 40, $large: 70, $extra-large: 100);
+}
+
+@include media-breakpoint-up(xl) {
+  @include beforespacing(
+    $tiny: 0,
+    $extra-small: 30,
+    $small: 40,
+    $medium: 50,
+    $large: 80,
+    $extra-large: 120
+  );
+  @include afterspacing(
+    $tiny: 0,
+    $extra-small: 30,
+    $small: 40,
+    $medium: 50,
+    $large: 80,
+    $extra-large: 120
+  );
+}
+
+@include media-breakpoint-up(xxl) {
+  @include beforespacing($medium: 90, $large: 140, $extra-large: 180);
+  @include afterspacing($medium: 90, $large: 140, $extra-large: 180);
+}

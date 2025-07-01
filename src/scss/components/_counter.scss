@@ -1,0 +1,129 @@
+.counter-inner {
+	position: relative;
+	background-color: $primary-color;
+	padding: 60px 0px 20px 0px;
+	margin-bottom: 20px;
+	.counter-item {
+		color: $text-color;
+		text-align: center;
+		margin-bottom: 40px;
+		position: relative;
+		z-index: 4;
+		h1 {
+			@include font-size($font-sizes70);
+			display: inline-flex;
+			margin-bottom: 10px;
+		}
+		.counter-symbol-text {
+			font-family: var(--font-roboto);
+		}
+		.counter-title {
+			@include font-size($font-sizes18);
+			text-transform: uppercase;
+			font-family: var(--font-oswald);
+			font-weight: $bold-weight;
+		}
+	}
+
+	&::after {
+		content: "";
+		@include abs-position(20px, 20px, -20px, 20px);
+		background-color: $secondary-color;
+		z-index: -2;
+	}
+	.counter-bg-text {
+		@include font-size($font-sizes240);
+		@include abs-position(50%, initial, initial, 50%);
+		font-family: var(--font-oswald);
+		font-weight: $bold-weight;
+		text-transform: uppercase;
+		line-height: 1;
+		text-align: center;
+		transform: translate(-50%, -50%);
+		color: transparent;
+		z-index: 1;
+		opacity: 0.3;
+		-webkit-text-stroke: 2px $white;
+	}
+}
+.counter-progressbar {
+	display: block;
+	gap: 19px;
+	.counter-progressbar-wrapper {
+		@include flexbox();
+		@include align-items(center);
+		gap: 40px;
+	}
+	.counter-progressbar__circle {
+		position: relative;
+		display: inline-flex;
+	}
+	.counter-progressbar__circle-stroke {
+		position: relative;
+	}
+	.counter-progressbar__circle-stroke-main {
+		stroke: $primary-color;
+	}
+	.counter-progressbar__icon {
+		@include abs-position(50%, initial, initial, 50%);
+		transform: translate(-50%, -50%);
+		display: inline-flex;
+		svg {
+			width: 35px;
+			height: 35px;
+		}
+	}
+	.counter-progressbar__number {
+		@include font-size($font-sizes48);
+		font-weight: $bold-weight;
+		color: $primary-color;
+		font-family: var(--font-oswald);
+		text-align: center;
+	}
+	.counter-progressbar__text {
+		h4 {
+			@include font-size($font-sizes24);
+			color: $text-color;
+			font-weight: $bold-weight;
+			margin: 20px 0;
+			text-transform: uppercase;
+		}
+	}
+}
+@include media-breakpoint-up(sm) {
+	.counter-progressbar {
+		@include flexbox();
+		@include align-items(center);
+		.counter-progressbar-wrapper {
+			gap: 19px;
+		}
+		.counter-progressbar__text {
+			width: 53%;
+		}
+	}
+}
+@include media-breakpoint-up(md) {
+	.counter-inner {
+		padding: 60px 0;
+		.counter-item {
+			margin-bottom: 0;
+		}
+	}
+	.counter-progressbar {
+		gap: 50px;
+		.counter-progressbar-wrapper {
+			gap: 50px;
+		}
+	}
+}
+@include media-breakpoint-up(lg) {
+	.counter-inner {
+		padding: 100px 0;
+	}
+	.counter-progressbar {
+		gap: 20px;
+		.counter-progressbar-wrapper {
+			gap: 20px;
+		}
+	}
+}

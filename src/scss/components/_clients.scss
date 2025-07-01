@@ -1,0 +1,31 @@
+.client-section {
+	.client-wrapper {
+		position: relative;
+	}
+	.client-item {
+		@include inline-flexbox();
+		@include align-items(center);
+		text-align: center;
+		padding: 0px 15px;
+		img {
+			max-width: 100%;
+			filter: opacity(0.4);
+			transition: all ease-in-out 0.2s;
+			display: inline-block;
+			&:hover {
+				filter: opacity(1);
+				transition: all ease-in-out 0.5s;
+			}
+		}
+	}
+}
+@include media-breakpoint-up(md) {
+	.client-section .client-item {
+		padding: 0px 20px;
+	}
+}
+@include media-breakpoint-up(xl) {
+	.client-section .client-item {
+		padding: 0px 40px;
+	}
+}

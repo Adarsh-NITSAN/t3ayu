@@ -1,0 +1,109 @@
+/****************************************************************************
+  Body
+ ***************************************************************************/
+body {
+  @include font-size($font-sizes16);
+  color: black;
+  font-weight: $regular-weight;
+  font-family: var(--font-roboto);
+  position: relative;
+  text-transform: none;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+span {
+  font-weight: $medium-weight;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease 0s;
+  color: $primary-color;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+svg {
+  overflow: hidden;
+  vertical-align: inherit;
+}
+
+/****************************************************************************
+  Headings
+ ***************************************************************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: $semibold-weight;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+
+  a {
+    color: $black;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+h1 {
+  @include font-size($font-sizes72);
+}
+
+.h1 {
+  @include font-size($font-sizes110);
+}
+
+h2 {
+  @include font-size($font-sizes48);
+}
+
+h3 {
+  @include font-size($font-sizes30);
+}
+
+.h3 {
+  @include font-size($font-sizes26);
+}
+
+h4 {
+  @include font-size($font-sizes24);
+}
+
+h5 {
+  @include font-size($font-sizes20);
+}
+
+h6 {
+  @include font-size($font-sizes16);
+}
+
+.dark-color {
+  color: $secondary-color;
+}
+
+.light-color {
+  color: $white;
+}
+
+.primary-color {
+  color: $primary-color;
+}

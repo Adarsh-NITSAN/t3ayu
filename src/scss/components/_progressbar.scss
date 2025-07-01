@@ -1,0 +1,39 @@
+.progress-bars {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.progress-bar {
+  margin-bottom: 45px;
+  display: block;
+}
+
+.progress-bar__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    font-weight: $bold-weight;
+    font-family: var(--font-primary);
+    color: $text-color;
+  }
+}
+
+.progress-bar__fill {
+  position: relative;
+  background-color: $border-color;
+  height: 5px;
+  width: 100%;
+  display: inline-block;
+
+  .fill__line {
+    @include position(absolute, top, 50%, left, 0);
+    background-color: $primary-color;
+    width: 5%;
+    height: 16px;
+    transform: translateY(-50%);
+    transition: width 0.5s;
+  }
+}

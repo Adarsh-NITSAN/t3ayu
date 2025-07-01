@@ -1,0 +1,176 @@
+.footer-section {
+  background-color: $white;
+  .footer-top {
+    background-color: $light-color;
+    padding: 40px 0;
+    .container {
+      display: block;
+      text-align: center;
+    }
+  }
+  .footer-widget-area {
+    background-color: $white;
+    .grid-blog-section [class^="col-lg-"] {
+      width: 100%;
+    }
+
+    &.medium-footer {
+      .medium-footer__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 60px;
+      }
+
+      .row {
+        .col-layout:nth-child(2) > div {
+          background-color: $primary-color;
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          p,
+          span,
+          a {
+            color: $text-color;
+          }
+          .btn {
+            color: $white;
+          }
+
+          a:hover {
+            color: $white;
+          }
+        }
+
+        .col {
+          padding-left: 60px;
+          padding-right: 60px;
+        }
+      }
+    }
+  }
+  .social-icon {
+    margin-top: 30px;
+    a {
+      @include inline-flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 50%;
+      margin-left: 10px;
+      color: $secondary-color;
+      background-color: $white;
+      &:hover {
+        background-color: $primary-color;
+        transition: all 0.3s ease-out 0s;
+      }
+    }
+  }
+
+  .copy-right-section {
+    text-align: center;
+    background-color: $white;
+
+    .copy-right-text {
+      @include font-size($font-sizes18);
+      font-weight: $bold-weight;
+      color: $text-color;
+      border-top: 2px solid;
+      border-color: #ededed;
+      padding: 35px 0;
+      text-align: center;
+      p {
+        margin: 0;
+      }
+      &.without-border {
+        border-top: 0;
+      }
+    }
+    .social-icon {
+      margin-top: 15px;
+      text-align: center;
+      a {
+        background-color: #f7fcff;
+        color: $secondary-color;
+        &:hover {
+          background-color: $primary-color;
+        }
+      }
+    }
+    &.with-icon {
+      background-color: #f7fcff;
+      .social-icon a {
+        background-color: $white;
+        &:hover {
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+  &.dark-footer {
+    .footer-top {
+      background-color: #091620;
+    }
+    .footer-widget-area {
+      background-color: $secondary-color;
+    }
+    .social-icon a {
+      background-color: #14212b;
+      color: $white;
+      &:hover {
+        background-color: $primary-color;
+        color: $secondary-color;
+      }
+    }
+    .copy-right-section {
+      background-color: $secondary-color;
+      .copy-right-text {
+        color: $white;
+        border-color: rgba($white, 0.1);
+      }
+      .social-icon a {
+        background-color: #14212b;
+        color: $white;
+        &:hover {
+          background-color: $primary-color;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+@include media-breakpoint-up(sm) {
+  .footer-section {
+    .footer-top .container {
+      @include flexbox();
+      @include justify-content(space-between);
+      @include align-items(center);
+    }
+    .social-icon {
+      margin-top: 0;
+    }
+  }
+}
+@include media-breakpoint-up(md) {
+  .footer-section {
+    .social-icon a {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+    }
+
+    .copy-right-section .copy-right-text {
+      @include flexbox();
+      @include justify-content(space-between);
+      @include align-items(center);
+      .social-icon {
+        margin-top: 0;
+      }
+    }
+  }
+}

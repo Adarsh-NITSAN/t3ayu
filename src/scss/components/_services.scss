@@ -1,0 +1,43 @@
+//service card
+.service-card-section {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.service-card {
+  border: 2px solid;
+  border-color: rgba($white, 10%);
+  padding: 40px 25px;
+  text-align: center;
+  cursor: context-menu;
+  transition: all ease-in-out 0.3s;
+  margin-top: 30px;
+  background-color: $white;
+
+  .service-card__link {
+    margin-bottom: 25px;
+  }
+
+  h4 {
+    margin-bottom: 30px;
+  }
+
+  .service-card__icon {
+    margin-top: 30px;
+    color: $primary-color;
+    font-size: 35px;
+  }
+
+  &:hover {
+    border: 2px solid $primary-color;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .service-card__heading {
+    .heading-title {
+      max-width: 60%;
+    }
+  }
+}
