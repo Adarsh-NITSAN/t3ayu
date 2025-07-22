@@ -49,13 +49,14 @@ const SingleCricularCounter = forwardRef(
     const strokeWidth = 5;
 
     useEffect(() => {
+      const incrementValue = Math.ceil(percentValue / 100); // Calculate increment to complete in approximately the same time
       const piechartTimer = setTimeout(() => {
         if (progress < percentValue) {
-          setProgress(progress + 1);
+          setProgress(prev => Math.min(prev + incrementValue, percentValue));
         }
       }, 50);
       return () => {
-        clearInterval(piechartTimer);
+        clearTimeout(piechartTimer);
       };
     }, [progress, percentValue]);
 
@@ -69,7 +70,8 @@ const SingleCricularCounter = forwardRef(
     const radius = (size - strokeWidth) / 2;
 
     const circumference = radius * Math.PI * 2;
-    const dash = (progress * circumference) / 100;
+    // Calculate dash based on the actual counter number as the maximum
+    const dash = (progress / percentValue) * circumference;
 
     const CustomIcon = ({ iconName }) => {
       const Icon = FontAwesome[iconName];

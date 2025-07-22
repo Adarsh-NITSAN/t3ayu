@@ -29,7 +29,7 @@ const Stepper = ({ data, spaceBefore, spaceAfter }) => {
           <h4>{data.title}</h4>
           <p>{data.content}</p>
           <div className="stepper-grid__icon">
-            <FontAwesome.FaCheck />
+            <IconComponent iconName={data?.icons} />
           </div>
           <span className="stepper-grid__count">{data.steps}</span>
         </div>

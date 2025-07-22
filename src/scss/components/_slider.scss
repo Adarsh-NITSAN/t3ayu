@@ -311,10 +311,10 @@
 
 		&:hover {
 			.swiper-button-next {
-				right: 0;
+				right: 1%;
 			}
 			.swiper-button-prev {
-				left: 0;
+				left: 1%;
 			}
 		}
 	}
@@ -333,10 +333,10 @@
 	.sliding-blog {
 		&:hover {
 			.swiper-button-next {
-				right: -8%;
+				right: 1%;
 			}
 			.swiper-button-prev {
-				left: -8%;
+				left: 1%;
 			}
 		}
 	}

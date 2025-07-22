@@ -41,16 +41,16 @@ const Team = ({ data, spaceAfter, spaceBefore }) => {
           }
         : false,
     pagination:
-      data && data.dotsDynamicStyle === "1"
+      data?.sliderDots === "1" && data?.selectDotsStyle === "dynamic-style"
         ? {
             clickable: true,
             dynamicBullets: true,
           }
-        : data && data.sliderFractionNumbers === "1"
+        : data?.sliderDots === "1" && data?.selectDotsStyle === "fraction-style"
         ? {
             type: "fraction",
           }
-        : data && data.sliderDots === "1"
+        : data?.sliderDots === "1" && data?.selectDotsStyle === "default"
         ? {
             clickable: true,
           }

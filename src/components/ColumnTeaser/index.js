@@ -36,7 +36,7 @@ const ColumnTeaser = ({ data, spaceAfter, spaceBefore }) => {
                 <div className="column-grid" key={index}>
                   <h4>
                     <span>
-                      <IconComponent iconName={item?.icon} />
+                      <IconComponent iconName={item?.icons} />
                     </span>
                     {item.title}
                   </h4>
@@ -68,7 +68,7 @@ const ColumnTeaser = ({ data, spaceAfter, spaceBefore }) => {
                 <div className="column-grid" key={index}>
                   <h4>
                     <span>
-                      <IconComponent iconName={item?.icon} />
+                      <IconComponent iconName={item?.icons} />
                     </span>
                     {item.title}
                   </h4>

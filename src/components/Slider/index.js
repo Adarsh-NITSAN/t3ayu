@@ -25,20 +25,20 @@ const Slider = ({ data, spaceBefore, spaceAfter }) => {
 
   const settings = {
     pagination:
-      data && data.dotsDynamicStyle === "1"
-        ? {
-            clickable: true,
-            dynamicBullets: true,
-          }
-        : data && data.sliderFractionsNumbers === "1"
-        ? {
-            type: "fraction",
-          }
-        : data && data.sliderDots === "1"
-        ? {
-            clickable: true,
-          }
-        : false,
+      data?.dotsPagination === "1" && data?.selectDotsStyle === "dynamic-dots"
+      ? {
+          clickable: true,
+          dynamicBullets: true,
+        }
+      : data?.dotsPagination === "1" && data?.selectDotsStyle === "fraction-style"
+      ? {
+          type: "fraction",
+        }
+      : data?.dotsPagination === "1" && data?.selectDotsStyle === "default"
+      ? {
+          clickable: true,
+        }
+      : false,
     navigation: data && data.sliderNavigations === "1" ? true : false,
     autoplay:
       data && data.sliderAutoplay === "1"
@@ -108,41 +108,43 @@ const Slider = ({ data, spaceBefore, spaceAfter }) => {
                             </Link>
                           )}
                         </div>
-                        <div className="sliding-blog-desc">
-                          {title && (
-                            <span className="blog-category">{title}</span>
-                          )}
+                        {(title || subTitle || link) && (
+                          <div className="sliding-blog-desc">
+                            {title && (
+                              <span className="blog-category">{title}</span>
+                            )}
 
-                          {subTitle && (
-                            <h2>
-                              {link.href ? (
-                                <Link
-                                  href={`${link.href}`}
-                                  aria-label="subtitle"
-                                >
-                                  {subTitle}
-                                </Link>
-                              ) : (
-                                subTitle
-                              )}
-                            </h2>
-                          )}
+                            {subTitle && (
+                              <h2>
+                                {link.href ? (
+                                  <Link
+                                    href={`${link.href}`}
+                                    aria-label="subtitle"
+                                  >
+                                    {subTitle}
+                                  </Link>
+                                ) : (
+                                  subTitle
+                                )}
+                              </h2>
+                            )}
 
-                          {link && (
-                            <Link
-                              href={`${link.href}`}
-                              className="blog-link"
-                              aria-label="link"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 448 512"
+                            {link && (
+                              <Link
+                                href={`${link.href}`}
+                                className="blog-link"
+                                aria-label="link"
                               >
-                                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-                              </svg>
-                            </Link>
-                          )}
-                        </div>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 448 512"
+                                >
+                                  <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                                </svg>
+                              </Link>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </SwiperSlide>
                   );

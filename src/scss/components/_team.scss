@@ -61,6 +61,10 @@
       color: $white;
     }
   }
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 35px;
+  }
 }
 
 @include media-breakpoint-up(md) {

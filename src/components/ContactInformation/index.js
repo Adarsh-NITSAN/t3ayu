@@ -10,8 +10,8 @@ import { sanitizeLink } from "@/utils/sanitizeLink";
 const ContactInformation = ({ data, spaceBefore, spaceAfter }) => {
   const router = useRouter();
 
-  let contact = data.phoneNumber.href.replace("tel:", "");
-  let email = data.eMail.href.replace("mailto:", "");
+  let contact = data?.contactNumber ? data.contactNumber.replace("tel:", "") : "";
+  let email = data?.eMail ? data.eMail.replace("mailto:", "") : "";
 
   return (
     <section
@@ -50,7 +50,7 @@ const ContactInformation = ({ data, spaceBefore, spaceAfter }) => {
               </div>
             </div>
           )}
-          {data.phoneNumber && (
+          {data?.contactNumber && (
             <div className="contact-medium__box">
               <div className="box__icon">
                 <FontAwesome.FaPhoneAlt />
@@ -58,10 +58,10 @@ const ContactInformation = ({ data, spaceBefore, spaceAfter }) => {
               <div className="box__content">
                 <h4>PHONE NUMBER</h4>
                 <Link
-                  href={`tel: ${data.phoneNumber.href.replace(/\D/g, "")}`}
+                  href={`tel:${data.contactNumber ? data.contactNumber.replace(/\D/g, "") : ""}`}
                   className="content__link"
                   aria-label="contact"
-                  target={data.phoneNumber.target}
+                  target={data.contactNumber.target}
                 >
                   {contact}
                 </Link>
@@ -76,7 +76,7 @@ const ContactInformation = ({ data, spaceBefore, spaceAfter }) => {
               <div className="box__content">
                 <h4>EMAIL ADDRESS</h4>
                 <Link
-                  href={data.eMail.href}
+                  href={`mailto:${data.eMail}`}
                   className="content__link"
                   aria-label="email"
                   target={data.eMail.target}
@@ -142,26 +142,26 @@ const ContactInformation = ({ data, spaceBefore, spaceAfter }) => {
       ) : (
         <div className="contact-large">
           <ul className="contact-large__list">
-            {data.phoneNumber?.href && (
+            {data?.contactNumber && (
               <li>
                 <FontAwesome.FaPhone />
                 <span>Phone :</span>
                 <Link
-                  href={`tel: ${data.phoneNumber.href.replace(/\D/g, "")}`}
+                  href={`tel:${data.contactNumber ? data.contactNumber.replace(/\D/g, "") : ""}`}
                   className="content__link"
                   aria-label="phone"
-                  target={data.phoneNumber.target}
+                  target={data.contactNumber.target}
                 >
                   {contact}
                 </Link>
               </li>
             )}
-            {data.eMail?.href && (
+            {data.eMail && (
               <li>
                 <FontAwesome.FaEnvelope />
                 <span>Email :</span>
                 <Link
-                  href={data.eMail.href}
+                  href={`mailto:${data.eMail}`}
                   className="content__link"
                   aria-label="email"
                   target={data.eMail.target}
